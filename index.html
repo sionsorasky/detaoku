@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>スレッド一覧</h2>
+  <div id="thread-list"></div>
+
+  <script>
+    async function loadThreads() {
+      const res = await fetch('GASのデプロイURL'); // ←貼り付け
+      const threads = await res.json();
+      const html = threads.map(t => `
+        <div>
+          <h3>${t.title}</h3>
+          <a href="${t.url}" target="_blank">開く</a>
+        </div>
+      `).join('');
+      document.getElementById('thread-list').innerHTML = html;
+    }
+
+    loadThreads();
+  </script>
+</body>
+</html>
