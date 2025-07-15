@@ -6,7 +6,7 @@
 
   <script>
     async function loadThreads() {
-      const res = await fetch('GASのデプロイURL'); // ←貼り付け
+      const res = await fetch('https://script.google.com/macros/s/AKfycbze-wRpwKjhOOwPZ5hZrwR9rAfzdR5fePe8CSPLhWfSZvAnqF2XD-4aV0We5UQprDPZPw/exec'); // ←貼り付け
       const threads = await res.json();
       const html = threads.map(t => `
         <div>
